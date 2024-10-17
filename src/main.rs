@@ -19,10 +19,19 @@ fn main() {
 }
 */
 
+/*
 mod valid_palin;
 use valid_palin::is_palindrome;
 
 fn main() {
     let str = String::from("0P");
     println!("{}", is_palindrome(str));
+}
+*/
+
+mod column;
+use column::convert_to_title;
+
+fn main(){
+    println!("{}",convert_to_title(703));
 }
