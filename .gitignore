@@ -1,1 +1,13 @@
 /target
+
+
+leetcode/
+├── Cargo.toml
+└── src/
+    ├── lib.rs          # Declares the library and its modules
+    ├── main.rs         # The runner for the current problem
+    └── solutions/
+        ├── mod.rs      # Declares all the solution modules
+        └── p171_excel_sheet_column_title.rs  # Example for problem 171
+        # └── p1_two_sum.rs   (You'll add more files like this)
+        # └── ...

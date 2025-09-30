@@ -1,0 +1,11 @@
+pub mod add_one;
+pub mod find_index;
+pub mod last_word;
+pub mod merge_sort;
+pub mod remove_duplicate;
+pub mod remove_elem;
+pub mod search_insert_pos;
+pub mod sqrt;
+pub mod valid_palin;
+pub mod valid_parantheses;
+pub mod column;
