@@ -8,3 +8,4 @@ pub mod search_insert_pos;
 pub mod sqrt;
 pub mod valid_palin;
 pub mod valid_parantheses;
+pub mod column;
