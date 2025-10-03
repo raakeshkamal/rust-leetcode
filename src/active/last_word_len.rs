@@ -2,15 +2,11 @@
 58. Length of Last Word
 Easy
 Topics
-Companies
+premium lock iconCompanies
 
 Given a string s consisting of words and spaces, return the length of the last word in the string.
-
 A word is a maximal
-substring
 consisting of non-space characters only.
-
-
 
 Example 1:
 
@@ -30,8 +26,6 @@ Input: s = "luffy is still joyboy"
 Output: 6
 Explanation: The last word is "joyboy" with length 6.
 
-
-
 Constraints:
 
     1 <= s.length <= 104
@@ -46,16 +40,19 @@ pub struct Solution;
 
 impl Solution {
     pub fn length_of_last_word(s: String) -> i32 {
-        let mut k: usize = 0;
-        for i in 0..s.len() {
-            if i > 0 && s.chars().nth(i - 1).unwrap() == ' ' && s.chars().nth(i).unwrap() != ' ' {
-                k = 0;
-            }
-            if s.chars().nth(i).unwrap() != ' ' {
-                k += 1;
+        let mut res = 0;
+        for i in (0..s.len()).rev() {
+            if let Some(" ") = s.get(i..i + 1) {
+                if res > 0 {
+                    break;
+                } else {
+                    continue;
+                }
+            } else {
+                res += 1;
             }
         }
-        k as i32
+        res
     }
 }
 
@@ -63,8 +60,8 @@ impl Solution {
 impl Runnable for Solution {
     fn run() {
         // This is the example code you wanted to move
-        let s = "Hello World".to_string();
-        let res = Self::length_of_last_word(s);
+        let input = "Hello World".to_string();
+        let res = Self::length_of_last_word(input);
         println!("{:?}", res);
     }
 }
