@@ -1,1 +1,1 @@
-pub mod last_word_len;
+pub mod pascal_triangle_row;

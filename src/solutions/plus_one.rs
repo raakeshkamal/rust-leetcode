@@ -2,12 +2,11 @@
 66. Plus One
 Easy
 Topics
-Companies
+premium lock iconCompanies
+
 You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.
 
 Increment the large integer by one and return the resulting array of digits.
-
-
 
 Example 1:
 
@@ -16,6 +15,7 @@ Output: [1,2,4]
 Explanation: The array represents the integer 123.
 Incrementing by one gives 123 + 1 = 124.
 Thus, the result should be [1,2,4].
+
 Example 2:
 
 Input: digits = [4,3,2,1]
@@ -23,6 +23,7 @@ Output: [4,3,2,2]
 Explanation: The array represents the integer 4321.
 Incrementing by one gives 4321 + 1 = 4322.
 Thus, the result should be [4,3,2,2].
+
 Example 3:
 
 Input: digits = [9]
@@ -31,12 +32,12 @@ Explanation: The array represents the integer 9.
 Incrementing by one gives 9 + 1 = 10.
 Thus, the result should be [1,0].
 
-
 Constraints:
 
-1 <= digits.length <= 100
-0 <= digits[i] <= 9
-digits does not contain any leading 0's.
+    1 <= digits.length <= 100
+    0 <= digits[i] <= 9
+    digits does not contain any leading 0's.
+
 
 */
 
@@ -46,29 +47,22 @@ pub struct Solution;
 
 impl Solution {
     pub fn plus_one(digits: Vec<i32>) -> Vec<i32> {
-        let len = digits.len();
-        let mut v: Vec<i32> = vec![0; len];
-        let mut carry: i32;
-        if digits[len - 1] < 9 {
-            carry = 0;
-            v[len - 1] = digits[len - 1] + 1;
-        } else {
-            carry = 1;
-            v[len - 1] = 0;
-        }
-        for i in (0..len - 1).rev() {
-            if digits[i] + carry < 10 {
-                v[i] = digits[i] + carry;
-                carry = 0;
-            } else {
-                v[i] = 0;
+        let mut res = vec![];
+        let mut carry = 1;
+        for i in (0..digits.len()).rev() {
+            if digits[i] + carry > 9 {
                 carry = 1;
+                res.push(0);
+            } else {
+                res.push(digits[i] + carry);
+                carry = 0;
             }
         }
         if carry == 1 {
-            v.insert(0, 1);
+            res.push(1);
         }
-        v
+        res.reverse();
+        res
     }
 }
 
@@ -76,7 +70,7 @@ impl Solution {
 impl Runnable for Solution {
     fn run() {
         // This is the example code you wanted to move
-        let input = vec![1, 2, 3];
+        let input = vec![9];
         let res = Self::plus_one(input);
         println!("{:?}", res);
     }
