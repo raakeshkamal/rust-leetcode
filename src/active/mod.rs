@@ -1,1 +1,1 @@
-pub mod pascal_triangle_row;
+pub mod num_of_1_bit;

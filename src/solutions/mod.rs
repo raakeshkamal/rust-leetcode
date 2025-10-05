@@ -15,3 +15,7 @@ pub mod bin_add;
 pub mod climb_stairs;
 pub mod remove_duplicates_ll;
 pub mod pascal_triangle;
+pub mod pascal_triangle_row;
+pub mod single_num;
+pub mod majority;
+pub mod excel_col_to_num;

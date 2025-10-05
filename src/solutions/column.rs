@@ -43,22 +43,12 @@ pub struct Solution;
 impl Solution {
     pub fn convert_to_title(column_number: i32) -> String {
         let mut str = String::from("");
-        let mut i = column_number;
-        loop {
-            let x: u8;
-            if i % 26 == 0 {
-                x = 26;
-            } else {
-                x = ((i) % 26) as u8;
-            }
-            str.insert(0, (x + 64) as char);
-            if i <= 26 {
-                break;
-            }
-            if i % 26 == 0 {
-                i -= 26;
-            }
-            i /= 26;
+        let mut n = column_number;
+        // ! This as AI generated so be ashamed of yourself.
+        while n > 0 {
+            let remainder = ((n - 1) % 26) as u8;
+            str.insert(0, (b'A' + remainder) as char);
+            n = (n - 1) / 26;
         }
         str
     }

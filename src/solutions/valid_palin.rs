@@ -39,29 +39,21 @@ pub struct Solution;
 
 impl Solution {
     pub fn is_palindrome(s: String) -> bool {
-        let byte_str = s.as_bytes();
-        let mut final_byte_str: Vec<u8> = Vec::new();
+        let byte_str: Vec<char> = s.chars().collect();
+        let mut final_str: Vec<char> = Vec::new();
         for i in byte_str {
-            if (*i >= 97 && *i <= 122) || (*i >= 48 && *i <= 57) {
-                final_byte_str.push(*i);
-            } else if *i >= 65 && *i <= 90 {
-                final_byte_str.push(*i + 32);
+            if i.is_alphanumeric() {
+                final_str.push(i.to_ascii_lowercase());
             }
         }
-        let str_len = final_byte_str.len();
-        if str_len == 0 {
-            return true;
-        }
-        let mut mid: usize = str_len;
-        if (str_len % 2) > 0 {
-            mid /= 2;
-        } else {
-            mid = (mid / 2) + 1;
-        }
-        for i in 0..mid {
-            let j = str_len - i - 1;
-            if final_byte_str[j] != final_byte_str[i] {
+        let str_len = final_str.len();
+        for i in 0..str_len {
+            let rev_i = str_len - 1 - i;
+            if final_str[i] != final_str[rev_i] {
                 return false;
+            }
+            if i > rev_i {
+                break;
             }
         }
         true
@@ -84,7 +76,10 @@ mod tests {
 
     #[test]
     fn test_case_1() {
-        assert_eq!(Solution::is_palindrome("A man, a plan, a canal: Panama".to_string()), true);
+        assert_eq!(
+            Solution::is_palindrome("A man, a plan, a canal: Panama".to_string()),
+            true
+        );
     }
 
     #[test]
