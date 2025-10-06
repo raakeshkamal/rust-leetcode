@@ -19,3 +19,4 @@ pub mod pascal_triangle_row;
 pub mod single_num;
 pub mod majority;
 pub mod excel_col_to_num;
+pub mod num_of_1_bit;

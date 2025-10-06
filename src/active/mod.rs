@@ -1,1 +1,1 @@
-pub mod num_of_1_bit;
+pub mod happy_num;
