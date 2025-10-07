@@ -20,3 +20,8 @@ pub mod single_num;
 pub mod majority;
 pub mod excel_col_to_num;
 pub mod num_of_1_bit;
+pub mod happy_num;
+pub mod relative_ranks;
+pub mod base7;
+pub mod keyboard_row;
+pub mod fibonacci;

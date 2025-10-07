@@ -28,7 +28,7 @@ The input binary string 1111111111111111111111111111101 has a total of thirty se
 
 Constraints:
     1 <= n <= 231 - 1
- 
+
 Follow up: If this function is called many times, how would you optimize it?
 
 */
@@ -42,7 +42,7 @@ impl Solution {
         let mut temp = n;
         let mut res = 0;
         while temp > 0 {
-            res += temp%2;
+            res += temp % 2;
             temp /= 2;
         }
         res
