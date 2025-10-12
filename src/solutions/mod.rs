@@ -25,3 +25,6 @@ pub mod relative_ranks;
 pub mod base7;
 pub mod keyboard_row;
 pub mod fibonacci;
+pub mod reverse_string2;
+pub mod reverse_string3;
+pub mod detect_capital;

@@ -1,1 +1,1 @@
-pub mod reverse_string2;
+pub mod array_partition;
