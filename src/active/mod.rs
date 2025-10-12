@@ -1,1 +1,1 @@
-pub mod array_partition;
+pub mod max_cons_ones;
