@@ -1,6 +1,6 @@
 use rust_leetcode::Runnable;
 
-use rust_leetcode::active::max_cons_ones::Solution;
+use rust_leetcode::active::buddy_strings::Solution;
 
 fn main() {
     Solution::run();

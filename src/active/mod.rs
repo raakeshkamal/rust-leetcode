@@ -1,1 +1,1 @@
-pub mod max_cons_ones;
+pub mod buddy_strings;
